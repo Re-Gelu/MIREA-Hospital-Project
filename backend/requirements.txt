@@ -5,5 +5,9 @@ drf-yasg
 django-cors-headers
 django-filter==22.1
 django-debug-toolbar
+django-baton
+django-extra-settings==0.6.1
+django-colorfield
+django-watson
 psycopg2-binary==2.8.6
 gunicorn==20.1.0
