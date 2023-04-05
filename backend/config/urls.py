@@ -26,7 +26,7 @@ import debug_toolbar
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="Shop API snippets",
+        title="Поликлиник API snippets",
         default_version='v1',
         description="API description",
         terms_of_service="https://www.google.com/policies/terms/",
