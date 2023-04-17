@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "177728088719",
+    "project_id": "polyclinic-67502",
+    "storage_bucket": "polyclinic-67502.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:177728088719:android:31746f896b4b6ddfdedefa",
+        "android_client_info": {
+          "package_name": "com.example.medi_consult"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "177728088719-s8ekp46ftujbt4jc8qkmqukp71e4f03j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwW68J7269oohUjgPX2eBLkIGECcMggCY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "177728088719-s8ekp46ftujbt4jc8qkmqukp71e4f03j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
