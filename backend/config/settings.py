@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -48,6 +49,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    'polyclinic',
     
     'djoser',
     'baton.autodiscover',
@@ -183,6 +186,7 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 12
 }
 
+
 # JWT Authentication settings
 
 SIMPLE_JWT = {
@@ -190,6 +194,75 @@ SIMPLE_JWT = {
     "TOKEN_OBTAIN_SERIALIZER": "login.serializers.CustomTokenObtainPairSerializer"
 }
 
+
 # django-debug-toolbar settings
 
 INTERNAL_IPS = ["127.0.0.1"]
+
+
+# Django CORS headers setttings
+
+CORS_ALLOW_ALL_ORIGINS = True
+
+CORS_ALLOW_CREDENTIALS = True
+
+
+# Djoser settings
+
+DJOSER = {
+    'ACTIVATION_URL': '#/activate/{uid}/{token}',
+    'SEND_ACTIVATION_EMAIL': False,
+    'SERIALIZERS': {
+        'user': 'login.serializers.CustomUserSerializer',
+        'current_user': 'login.serializers.CustomUserSerializer',
+        'user_create': 'login.serializers.CustomUserCreateSerializer'
+    }
+}
+
+
+# Django baton settings
+
+BATON = {
+    'SITE_HEADER': 'Администрирование',
+    'SITE_TITLE': 'Администрирование поликлиники',
+    'INDEX_TITLE': ' ',
+    'COPYRIGHT': 'copyright © 2022 <a href="https://github.com/Re-Gelu">made by Re;Gelu</a>',  # noqa
+    'POWERED_BY': '<a href="https://github.com/Re-Gelu">Re;Gelu</a>',
+    'CONFIRM_UNSAVED_CHANGES': True,
+    'SHOW_MULTIPART_UPLOADING': True,
+    'ENABLE_IMAGES_PREVIEW': True,
+    'CHANGELIST_FILTERS_IN_MODAL': True,
+    'CHANGELIST_FILTERS_ALWAYS_OPEN': False,
+    'CHANGELIST_FILTERS_FORM': True,
+    'MENU_ALWAYS_COLLAPSED': False,
+    'MENU_TITLE': 'Меню',
+    'MESSAGES_TOASTS': False,
+    'GRAVATAR_DEFAULT_IMG': 'retro',
+    'LOGIN_SPLASH': '/static/core/img/login-splash.png',
+}
+
+
+# Prod settings
+
+if os.environ.get("DEBUG") == '1':
+    
+    DEBUG = int(os.environ.get("DEBUG"))
+    
+    ALLOWED_HOSTS = str(os.environ.get("DJANGO_ALLOWED_HOSTS")).split(" ")
+    
+    CSRF_TRUSTED_ORIGINS = str(os.environ.get("CSRF_TRUSTED_ORIGINS")).split(" ")
+    
+    INTERNAL_IPS = str(os.environ.get("INTERNAL_IPS")).split(" ")
+    
+    SECRET_KEY = os.environ.get("SECRET_KEY")
+    
+    DATABASES = {
+        "default": {
+            "ENGINE": os.environ.get("SQL_ENGINE"),
+            "NAME": os.environ.get("SQL_DATABASE"),
+            "USER": os.environ.get("SQL_USER"),
+            "PASSWORD": os.environ.get("SQL_PASSWORD"),
+            "HOST": os.environ.get("SQL_HOST"),
+            "PORT": os.environ.get("SQL_PORT"),
+        }
+    }
