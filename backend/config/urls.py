@@ -21,6 +21,7 @@ from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from rest_framework import routers
+from polyclinic.views import *
 import mimetypes
 import debug_toolbar
 
@@ -39,6 +40,8 @@ schema_view = get_schema_view(
 
 # REST API router
 router = routers.DefaultRouter()
+router.register(r'doctors', DoctorsViewSet)
+router.register(r'doctors_specializations', DoctorsSpecializationsViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
