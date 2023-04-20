@@ -16,7 +16,6 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
             android:alpha="0.5"
             android:scaleType="centerCrop"/>
 
@@ -73,14 +72,14 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Patient"/>
+                android:text="Пациент"/>
 
             <RadioButton
                 android:id="@+id/radioDoctor"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Doctor"/>
+                android:text="Доктор"/>
         </RadioGroup>
 
         <TextView
@@ -106,7 +105,7 @@
             android:layout_marginTop="20px"
             android:layout_marginEnd="32dp"
             android:layout_below="@id/radiogroup"
-            android:text="Select type of user"
+            android:text="Выберите тип пользователя"
             android:layout_centerHorizontal="true"
             android:textColor="#9C1C1C"
             android:visibility="gone" />
@@ -120,7 +119,7 @@
             android:layout_marginTop="20px"
             android:layout_marginEnd="32dp"
             android:layout_below="@id/radiogroup"
-            android:text="User not found for provided role!"
+            android:text="Пользователь не найден для указанного типа!"
             android:layout_centerHorizontal="true"
             android:textColor="#9C1C1C"
             android:visibility="gone" />
@@ -149,7 +148,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
             android:backgroundTint="@color/teal_200"
-            android:text="Login" />
+            android:text="Войти" />
 
         <TextView
             android:id="@+id/textViewForgotPassword"
@@ -159,7 +158,7 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="10dp"
             android:layout_below="@id/login_button"
-            android:text="Forgot Password?"
+            android:text="Забыли пароль?"
             android:textSize="15sp" />
 
     </RelativeLayout>
@@ -177,7 +176,7 @@
         android:id="@+id/registerHereTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Register here"
+        android:text="Регистрация"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginTop="32dp"
@@ -200,7 +199,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/black"
             android:layout_weight="1"
-            android:text="Patient"/>
+            android:text="Пациент"/>
 
         <Button
             android:id="@+id/buttonDoctor"
@@ -210,7 +209,7 @@
             android:layout_weight="1"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
-            android:text="Doctor"/>
+            android:text="Доктор"/>
     </LinearLayout>
 
 

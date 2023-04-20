@@ -29,7 +29,7 @@
                 android:layout_weight="1"
                 android:layout_marginEnd="5dp"
                 android:layout_height="wrap_content"
-                android:hint="First Name">
+                android:hint="Имя">
 
                 <!--this is the actual edit text which takes the input-->
                 <com.google.android.material.textfield.TextInputEditText
@@ -45,7 +45,7 @@
                 android:layout_marginStart="5dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="Last Name">
+                android:hint="Фамилия">
 
                 <!--this is the actual edit text which takes the input-->
                 <com.google.android.material.textfield.TextInputEditText
@@ -64,7 +64,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
-            android:hint="Email">
+            android:hint="Почта">
 
             <!--this is the actual edit text which takes the input-->
             <com.google.android.material.textfield.TextInputEditText
@@ -82,7 +82,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
-            android:hint="Password">
+            android:hint="Пароль">
 
             <!--this is the actual edit text which takes the input-->
             <com.google.android.material.textfield.TextInputEditText
@@ -100,7 +100,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
-            android:hint="10 Digit Mobile Number">
+            android:hint="Номер телефона (без кода страны)">
 
             <!--this is the actual edit text which takes the input-->
             <com.google.android.material.textfield.TextInputEditText
@@ -118,7 +118,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
-            android:hint="Address">
+            android:hint="Адрес">
 
             <!--this is the actual edit text which takes the input-->
             <com.google.android.material.textfield.TextInputEditText
@@ -162,7 +162,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:inputType="none"
-                    android:hint="Degree"
+                    android:hint="Степень"
                     android:text=""/>
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -181,7 +181,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:inputType="none"
-                    android:hint="Specialisation"
+                    android:hint="Специализация"
                     android:text=""/>
             </com.google.android.material.textfield.TextInputLayout>
         </RelativeLayout>
@@ -205,7 +205,7 @@
             android:layout_marginTop="5dp"
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
-            android:hint="Chargeable Fees">
+            android:hint="Взимаемые сборы">
 
             <!--this is the actual edit text which takes the input-->
             <com.google.android.material.textfield.TextInputEditText
@@ -230,7 +230,7 @@
             android:layout_marginTop="15dp"
             android:layout_below="@id/layout_fees"
             android:layout_centerHorizontal="true"
-            android:text="Register"/>
+            android:text="Зарегестрироваться"/>
     </RelativeLayout>
 
 </ScrollView>

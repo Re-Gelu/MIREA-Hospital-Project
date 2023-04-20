@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Поликлиника</string>
-    <string name="emailHint">E-mail</string>
-    <string name="passwordHint">Password</string>
-    <string name="invalidCredentialsMsg">Invalid Credentials</string>
-    <string name="feesRangeSpecification">\*Fees should be less than Rs. 1000</string>
+    <string name="emailHint">Почта</string>
+    <string name="passwordHint">Пароль</string>
+    <string name="invalidCredentialsMsg">Недействительные учетные данные</string>
+    <string name="feesRangeSpecification">\*Сборы должны быть меньше, чем 1000 руб.</string>
 
     <string-array name="degrees">
         <item>MD</item>
@@ -18,15 +18,15 @@
         <item>Ophthalmology</item>
         <item>Anaesthesia</item>
     </string-array>
-    <string name="title_activity_login_doctor">loginDoctor</string>
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome !"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">Login failed</string>
-    <string name="emailVerificationText">Please check your email to verify the e-mail address.</string>
-    <string name="resetPasswordMessage">If you\'re a registered user,an email has been sent to you to Reset Password.Kindly check you mail!</string>
+    <string name="title_activity_login_doctor">Вход для доктора</string>
+    <string name="prompt_email">Почта</string>
+    <string name="prompt_password">Пароль</string>
+    <string name="action_sign_in">Войдите или зарегестрируйтесь</string>
+    <string name="action_sign_in_short">Вход</string>
+    <string name="welcome">"Добро пожаловать !"</string>
+    <string name="invalid_username">Недопустимое имя пользователя</string>
+    <string name="invalid_password">Пароль должен быть больше 5 символов</string>
+    <string name="login_failed">Ошибка входа</string>
+    <string name="emailVerificationText">Пожалуйста, проверьте свою электронную почту, чтобы подтвердить адрес электронной почты.</string>
+    <string name="resetPasswordMessage">Если вы зарегистрированный пользователь, вам было отправлено электронное письмо для сброса пароля. Пожалуйста, проверьте свою почту!</string>
 </resources>
