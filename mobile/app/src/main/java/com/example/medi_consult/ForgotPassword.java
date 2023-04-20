@@ -48,14 +48,14 @@ public class ForgotPassword extends AppCompatActivity {
         String email=emailEdittext.getText().toString().trim();
 
         if(email.isEmpty()){
-            emailEdittext.setError("Email is required");
+            emailEdittext.setError("Поле email обязательно!");
             emailEdittext.requestFocus();
             return;
         }
 
         if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
             emailEdittext.setText("");
-            emailEdittext.setError("Enter valid e-mail address");
+            emailEdittext.setError("Введите корректный e-mail адрес!");
             emailEdittext.requestFocus();
             return;
         }
@@ -70,7 +70,7 @@ public class ForgotPassword extends AppCompatActivity {
                             msg.setVisibility(View.VISIBLE);
                         }
                         else{
-                            Toast.makeText(ForgotPassword.this, "Something wrong happened, Try Again!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ForgotPassword.this, "Что-то пошло не так! Попробуйте снова позже!", Toast.LENGTH_SHORT).show();
                         }
                         progressBar.setVisibility(View.GONE);
                     }

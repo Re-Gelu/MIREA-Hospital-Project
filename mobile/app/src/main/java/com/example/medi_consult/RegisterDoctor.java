@@ -87,7 +87,7 @@ public class RegisterDoctor extends AppCompatActivity {
 
         //Validations
         if(firstName.isEmpty()){
-            editTextFirstName.setError("First Name is required");
+            editTextFirstName.setError("Поле имени обязательно!");
             editTextFirstName.requestFocus();
             return;
         }
@@ -98,49 +98,49 @@ public class RegisterDoctor extends AppCompatActivity {
         }
 
         if(email.isEmpty()){
-            editTextEmail.setError("Email is required");
+            editTextEmail.setError("Поле email обязательно!");
             editTextEmail.requestFocus();
             return;
         }
 
         if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            editTextEmail.setError("Please provide valid email address");
+            editTextEmail.setError("Введите корректный e-mail адрес!");
             editTextEmail.requestFocus();
             return;
         }
 
         if(password.isEmpty()){
-            editTextPassword.setError("Password is required");
+            editTextPassword.setError("Поле пароля обязательно!");
             editTextPassword.requestFocus();
             return;
         }
 
         if(mobile.isEmpty()){
-            editTextMobile.setError("Contact number is required");
+            editTextMobile.setError("Поле телефона обязательно!");
             editTextMobile.requestFocus();
             return;
         }
 
         if(!Patterns.PHONE.matcher(mobile).matches()){
-            editTextMobile.setError("Invalid contact no");
+            editTextMobile.setError("Введите корректный телефон!");
             editTextMobile.requestFocus();
             return;
         }
 
         if(address.isEmpty()){
-            editTextAddress.setError("Address is required");
+            editTextAddress.setError("Поле адреса обязательно!");
             editTextAddress.requestFocus();
             return;
         }
 
         if(degree.isEmpty()){
-            editTextDegree.setError("Enter a degree");
+            editTextDegree.setError("Введите ученую степень!");
             editTextDegree.requestFocus();
             return;
         }
 
         if(specialization.equals("")){
-            editTextSpecialization.setText("General Physician");
+            editTextSpecialization.setText("Физик");
         }
 
         if(fees.isEmpty()){
@@ -148,13 +148,13 @@ public class RegisterDoctor extends AppCompatActivity {
         }
 
         if(Integer.valueOf(fees)>1000){
-            editTextFees.setError("Fees should be less than 1000 Rs");
+            editTextFees.setError("Плата должна быть меньше 1000!");
             editTextFees.requestFocus();
             return;
         }
 
         if(Integer.valueOf(fees)<0){
-            editTextFees.setError("Fees should be greater than or equal to zero");
+            editTextFees.setError("Плата должна быть больше нуля!");
             editTextFees.requestFocus();
             return;
         }
@@ -177,16 +177,16 @@ public class RegisterDoctor extends AppCompatActivity {
                                         public void onComplete(@NonNull Task<Void> task) {
                                             progressBar.setVisibility(View.GONE);
                                             if (task.isSuccessful()) {
-                                                Toast.makeText(RegisterDoctor.this, "Registration Successful", Toast.LENGTH_LONG).show();
+                                                Toast.makeText(RegisterDoctor.this, "Успешная регистрация", Toast.LENGTH_LONG).show();
                                             } else {
-                                                Toast.makeText(RegisterDoctor.this, "Something wrong happened, Try Again!", Toast.LENGTH_LONG).show();
+                                                Toast.makeText(RegisterDoctor.this, "Что-то пошло не так! Попробуйте снова позже!", Toast.LENGTH_LONG).show();
                                             }
                                         }
                                     });
                         }
                         else{
                             progressBar.setVisibility(View.GONE);
-                            Toast.makeText(RegisterDoctor.this,"Something wrong happened, Try Again!",Toast.LENGTH_LONG).show();
+                            Toast.makeText(RegisterDoctor.this,"Что-то пошло не так! Попробуйте снова позже!",Toast.LENGTH_LONG).show();
                         }
                     }
                 });

@@ -47,7 +47,7 @@ public class ViewDoctorsList extends AppCompatActivity {
                             }
                         }
                         if(doctorList.isEmpty()){
-                            Toast.makeText(ViewDoctorsList.this, "Sorry,No doctors are availaible at this moment", Toast.LENGTH_LONG).show();
+                            Toast.makeText(ViewDoctorsList.this, "На данный момент свободных докторов нет!", Toast.LENGTH_LONG).show();
                         }
                         else {
                             adapter = new CustomAdapter(doctorList, ViewDoctorsList.this);

@@ -96,25 +96,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String password=editTextPassword.getText().toString();
 
         if (email.isEmpty()) {
-            editTextEmail.setError("Email is required");
+            editTextEmail.setError("Поле email обязательно!");
             editTextEmail.requestFocus();
             return;
         }
 
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            editTextEmail.setError("Please provide valid email address");
+            editTextEmail.setError("Введите корректный e-mail адрес!");
             editTextEmail.requestFocus();
             return;
         }
 
         if (password.isEmpty()) {
-            editTextPassword.setError("Password is required");
+            editTextPassword.setError("Поле пароля обязательно!");
             editTextPassword.requestFocus();
             return;
         }
 
         if(password.length()<8){
-            editTextPassword.setError("Password should be 8 characters long");
+            editTextPassword.setError("Пароль должен быть больше 8 символов!");
             editTextPassword.requestFocus();
             return;
         }
@@ -160,7 +160,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                      @Override
                                      public void onCancelled(@NonNull DatabaseError error) {
                                          progressBar.setVisibility(View.GONE);
-                                         Toast.makeText(MainActivity.this, "Something wrong happened, Try Again!", Toast.LENGTH_SHORT).show();
+                                         Toast.makeText(MainActivity.this, "Что-то пошло не так! Попробуйте снова позже!", Toast.LENGTH_SHORT).show();
                                      }
                                  });
                                  flag=true;
@@ -195,7 +195,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                     @Override
                                     public void onCancelled(@NonNull DatabaseError error) {
                                         progressBar.setVisibility(View.GONE);
-                                        Toast.makeText(MainActivity.this, "Something wrong happened, Try Again!", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(MainActivity.this, "Что-то пошло не так! Попробуйте снова позже!", Toast.LENGTH_SHORT).show();
                                     }
                                 });
                                 flag=true;
