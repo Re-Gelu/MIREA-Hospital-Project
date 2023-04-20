@@ -105,14 +105,14 @@ public class loginPatient extends AppCompatActivity implements View.OnClickListe
 
                 Patient patient=snapshot.getValue(Patient.class);
                 if(patient==null){
-                    Toast.makeText(loginPatient.this,"Something wrong happened, Try Again!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(loginPatient.this,"Что-то пошло не так! Попробуйте снова позже!", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    welcome_text.setText("Welcome, " + patient.getFirstName());
+                    welcome_text.setText("Добро пожаловать, " + patient.getFirstName());
                     textview_name.setText(patient.getFirstName() + " " + patient.getLastName());
                     textview_email.setText(patient.getEmailAddress());
-                    textview_usertype.setText("Patient");
-                    textview_allergies.setText("No data provided");
+                    textview_usertype.setText("Пациент");
+                    textview_allergies.setText("Нет данных...");
                     textview_contact.setText(patient.getMobileNumber());
                     textview_address.setText(patient.getAddress());
                 }
@@ -120,7 +120,7 @@ public class loginPatient extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 progressBar.setVisibility(View.GONE);
-                Toast.makeText(loginPatient.this,"Something wrong happened, Try Again!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(loginPatient.this,"Что-то пошло не так! Попробуйте снова позже!", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -131,7 +131,6 @@ public class loginPatient extends AppCompatActivity implements View.OnClickListe
             case R.id.buttonMyProfile:
                 if(layout_myprofile.getVisibility()!=View.VISIBLE){
                     layout_myprofile.setVisibility(View.VISIBLE);
-                    //Setting other one gone
                     layout_bookappointment.setVisibility(View.GONE);
                 }
                 else{
@@ -174,7 +173,6 @@ public class loginPatient extends AppCompatActivity implements View.OnClickListe
 
     void scheduleAppointment(){
         if(layout_bookappointment.getVisibility()!=View.VISIBLE){
-            //RetrievingDoctor's List
             progressBar.setVisibility(View.VISIBLE);
             FirebaseDatabase.getInstance().getReferenceFromUrl("https://polyclinic-67502-default-rtdb.firebaseio.com/Doctors/")
                     .addValueEventListener(new ValueEventListener() {
@@ -192,24 +190,21 @@ public class loginPatient extends AppCompatActivity implements View.OnClickListe
 
                         @Override
                         public void onCancelled(@NonNull DatabaseError error) {
-                            Toast.makeText(loginPatient.this,"Something wrong happened, Try Again!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(loginPatient.this,"Что-то пошло не так! Попробуйте снова позже!", Toast.LENGTH_SHORT).show();
                         }
                     });
 
             progressBar.setVisibility(View.GONE);
-            //Setting up adapter
             ArrayAdapter<String> drNameAdapter=new ArrayAdapter<>(loginPatient.this,R.layout.dropdown_item,doctor_name);
             textview_doctorname.setAdapter(drNameAdapter);
             progressBar.setVisibility(View.GONE);
 
-            //Setting layouts
             layout_bookappointment.setVisibility(View.VISIBLE);
         }
         else{
             layout_bookappointment.setVisibility(View.GONE);
         }
 
-        //Setting other one gone
         layout_myprofile.setVisibility(View.GONE);
     }
 
@@ -221,38 +216,38 @@ public class loginPatient extends AppCompatActivity implements View.OnClickListe
         String allergies=edittext_allergies.getText().toString();
 
         if(drName.isEmpty()){
-            textview_doctorname.setError("Doctor name is required");
+            textview_doctorname.setError("Поле имя доктора обязательно!");
             textview_doctorname.requestFocus();
             return;
         }
 
         if(fees.isEmpty()){
-            textview_fees.setError("Error in loading fees, Try again later!");
+            textview_fees.setError("Ошибка загрузки цен, попробуйте позже!");
             textview_fees.requestFocus();
             return;
         }
 
         if(date.isEmpty()){
-            edittext_date.setError("Date is required");
+            edittext_date.setError("Поле даты обязательно!");
             edittext_date.requestFocus();
             return;
         }
 
         if(!checkValidDate(date)){
-            edittext_date.setError("Enter valid date");
+            edittext_date.setError("Введите корректную дату!");
             edittext_date.requestFocus();
             return;
         }
 
         if(time.isEmpty()){
-            edittext_time.setError("Time is required");
+            edittext_time.setError("Поле времени обязательно!");
             edittext_time.requestFocus();
             return;
         }
 
 
         if(!checkValidTime(time)){
-            edittext_time.setError("Enter valid time");
+            edittext_time.setError("Введите корректное время!");
             edittext_time.requestFocus();
             return;
         }
@@ -269,11 +264,11 @@ public class loginPatient extends AppCompatActivity implements View.OnClickListe
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()){
                             progressBar.setVisibility(View.GONE);
-                            Toast.makeText(loginPatient.this,"Appointment Booked",Toast.LENGTH_LONG).show();
+                            Toast.makeText(loginPatient.this,"Запись успешна!",Toast.LENGTH_LONG).show();
                         }
                         else{
                             progressBar.setVisibility(View.GONE);
-                            Toast.makeText(loginPatient.this,"Something wrong happened, Try again!",Toast.LENGTH_LONG).show();
+                            Toast.makeText(loginPatient.this,"Что-то пошло не так! Попробуйте снова позже!",Toast.LENGTH_LONG).show();
                         }
                     }
                 });
@@ -335,7 +330,7 @@ public class loginPatient extends AppCompatActivity implements View.OnClickListe
         for(Doctor doctor: doctors){
             String name=doctor.getFirstName()+" "+doctor.getLastName();
             if(textview_doctorname.getText().toString().equals(name)){
-                Toast.makeText(loginPatient.this,"Fees Applicable::"+doctor.getDoctorFees(),Toast.LENGTH_LONG);
+                Toast.makeText(loginPatient.this,"Цены::"+doctor.getDoctorFees(),Toast.LENGTH_LONG);
                 textview_fees.setText(Integer.toString(doctor.getDoctorFees()));
             }
         }
