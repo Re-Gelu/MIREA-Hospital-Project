@@ -3,7 +3,7 @@
     <string name="emailHint">Почта</string>
     <string name="passwordHint">Пароль</string>
     <string name="invalidCredentialsMsg">Недействительные учетные данные</string>
-    <string name="feesRangeSpecification">\*Сборы должны быть меньше, чем 1000 руб.</string>
+    <string name="feesRangeSpecification">\*Предоплата должна быть не более 1000 руб.</string>
 
     <string-array name="degrees">
         <item>MD</item>
@@ -14,9 +14,9 @@
     </string-array>
 
     <string-array name="specialisation">
-        <item>Orthopedics</item>
-        <item>Ophthalmology</item>
-        <item>Anaesthesia</item>
+        <item>Ортопедия</item>
+        <item>Офтальмология</item>
+        <item>Анастезиология</item>
     </string-array>
     <string name="title_activity_login_doctor">Вход для доктора</string>
     <string name="prompt_email">Почта</string>

@@ -319,7 +319,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/red"
                 android:layout_marginTop="15dp"
-                android:text="*Fees"
+                android:text="*Предоплата"
                 android:layout_below="@id/loginActivity_textview_doctor_layout"/>
 
             <LinearLayout
@@ -353,7 +353,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:backgroundTint="@color/teal_700"
-                        android:text="Получить комиссию" />
+                        android:text="Показать" />
 
             </LinearLayout>
 
@@ -363,7 +363,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/red"
                 android:layout_marginTop="15dp"
-                android:text="*Date"
+                android:text="*Дата"
                 android:layout_below="@id/loginActivity_textview_fees_layout"/>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -387,7 +387,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/red"
                 android:layout_marginTop="15dp"
-                android:text="*Time"
+                android:text="*Время"
                 android:layout_below="@id/loginActivity_textview_Date_layout"/>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -396,7 +396,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/loginActivity_textview_Time"
-                android:hint="пример: 12:09">
+                android:hint="пример: 12:09 PM">
 
                 <!--this is the actual edit text which takes the input-->
                 <com.google.android.material.textfield.TextInputEditText
@@ -412,7 +412,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/red"
                 android:layout_marginTop="15dp"
-                android:text="*Allergies"
+                android:text="*Аллергии"
                 android:layout_below="@id/loginActivity_Time_layout"/>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -439,7 +439,7 @@
                 android:backgroundTint="@color/teal_700"
                 android:layout_below="@id/loginActivity_Allergies_layout"
                 android:layout_marginTop="8dp"
-                android:text="Представить на рассмотрение"/>
+                android:text="Отправить"/>
 
             <Button
                 android:id="@+id/buttonViewResetAppointmentForm"
