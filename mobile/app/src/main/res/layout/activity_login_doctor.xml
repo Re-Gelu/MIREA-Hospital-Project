@@ -111,7 +111,7 @@
                     android:id="@+id/doctoritem_textViewSpecialization1"
                     android:layout_width="215dp"
                     android:layout_height="match_parent"
-                    android:text="16:20"
+                    android:text="16:20 PM"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
             </LinearLayout>
@@ -212,7 +212,7 @@
                     android:id="@+id/doctoritem_textViewSpecialization"
                     android:layout_width="141dp"
                     android:layout_height="wrap_content"
-                    android:text="12:00"
+                    android:text="12:00 PM"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
             </LinearLayout>
